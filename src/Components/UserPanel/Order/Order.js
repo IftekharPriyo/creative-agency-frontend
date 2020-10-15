@@ -22,15 +22,17 @@ const Order = () => {
     const services = DB()
     const selectedService = services.filter(srv=>srv._id===id)
     const {title,description,image} = selectedService.length && selectedService[0];
-    
+
     const handleChange =(e) => {
         const newInfo = { ...service }
         newInfo[e.target.name] = e.target.value
         setService(newInfo)
     }
+
     const email = user.email
     var serviceSummary = {...service,title,description,image,email,status}
     console.log(serviceSummary);
+   
     const submit =(e)=>{
         e.preventDefault()
         fetch('http://localhost:5000/addServices',{
@@ -41,6 +43,7 @@ const Order = () => {
         setToggle(true)
         serviceSummary = {}
     }
+    
     return (
         <div className="order" >
         <Form onSubmit={submit} className="w-50">
