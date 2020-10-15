@@ -2,23 +2,27 @@ import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
-import Database from '../../Database/Database';
+import DB from '../../DB/DB';
 import './Order.css'
 const Order = () => {
+
     const token = sessionStorage.getItem('token')
     const user = jwt_decode(token);
     const status = 'Pending'
     const [toggle,setToggle] = useState(false)
     const [file,setFile] = useState(null);
+    
     const handleFileChange = (e) =>{
         const newFile = e.target.files[0];
         setFile(newFile)
     }
+
     const [service,setService] = useState({})
     const {id} = useParams()
-    const services = Database()
+    const services = DB()
     const selectedService = services.filter(srv=>srv._id===id)
     const {title,description,image} = selectedService.length && selectedService[0];
+    
     const handleChange =(e) => {
         const newInfo = { ...service }
         newInfo[e.target.name] = e.target.value

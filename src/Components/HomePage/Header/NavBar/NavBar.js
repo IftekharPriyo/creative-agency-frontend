@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Nav, Navbar} from 'react-bootstrap';
-import './Navigation.css';
+import './NavBar.css';
 import logo from '../../../../images/logos/logo.png'
 import { Link } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 import { useEffect } from 'react';
-const Navigation = () => {
+const NavBar = () => {
     const token = sessionStorage.getItem('token')
     let user;
     if(token){
@@ -56,4 +56,4 @@ const Navigation = () => {
     );
 };
 
-export default Navigation;
+export default NavBar;

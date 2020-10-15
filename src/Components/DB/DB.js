@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const Database = () => {
+const DB = () => {
 const [services,setServices] = useState([])
 useEffect(()=>{
     fetch('http://localhost:5000/allServices')
@@ -12,5 +12,4 @@ useEffect(()=>{
 return services
 
 };
-
-export default Database;
+export default DB;

@@ -2,6 +2,9 @@
     display:flex;
     justify-content:space-between;
 }
+.companies{
+    margin-top:160px;
+}
 .slack{
    width:140px;
    height:36px;

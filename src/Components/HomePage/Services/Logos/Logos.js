@@ -12,7 +12,7 @@ const Logos = () => {
     return (
         <main>
             
-            <Container className="mt-5">
+            <Container className="companies">
                 <Row>
                     <Col xs={12} md={1}></Col>
                     <Col className="logos"  xs={12} md={10}>

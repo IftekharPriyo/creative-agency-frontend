@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import Database from '../../../Database/Database';
+import DB from '../../../DB/DB';
 import ServiceCards from './ServiceCards';
 import './ServiceDetails.css'
 const ServiceDetails = () => {
-    const services = Database()
+    const services = DB()
     return (
         <div className="text-center service-details" >
         <h1>Provide awesome <span style={{color: '#7AB259'}}>services</span> </h1>

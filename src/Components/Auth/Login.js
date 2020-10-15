@@ -7,9 +7,12 @@ import { initializeLoginFrameWork } from './LoginManager';
 import google from '../../images/icons/google.png';
 import logo from '../../images/logos/logo.png';
 import jwt_decode from "jwt-decode";
+
 const Login = () => {
+
     const token = sessionStorage.getItem('token')
     let user;
+
     if(token){
         user = jwt_decode(token);
     }
@@ -17,23 +20,23 @@ const Login = () => {
     const history = useHistory();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };
-
     
     initializeLoginFrameWork()
 
     const googleProvider = new firebase.auth.GoogleAuthProvider();
     
-    const storeAuthToken = () =>{
+    const storeToken = () =>{
         firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
             sessionStorage.setItem('token',idToken)
           }).catch(function(error) {
             // Handle error
           });
     }
+
     const handleGoogleSignIn = () => {
         firebase.auth().signInWithPopup(googleProvider)
             .then(result => {
-                storeAuthToken();
+                storeToken();
                 setTimeout(function(){ history.replace(from) }, 2000);
             })
             .catch(function (error) {
