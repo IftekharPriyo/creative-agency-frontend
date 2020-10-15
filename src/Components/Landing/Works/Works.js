@@ -12,14 +12,15 @@ import carousel5 from '../../../images/carousel5.png'
 
 const Works = () => {
     const settings = {
+      autoplay: false,
         dots: true,
         infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 2,
-        autoplay: true,
-        speed: 6000,
-        autoplaySpeed: 6000,
-        cssEase: "linear"
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        
+        speed: 60,
+
+        // cssEase: "linear"
       };
     return (
         <div className="works" >
