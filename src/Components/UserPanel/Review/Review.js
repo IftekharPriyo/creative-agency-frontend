@@ -12,7 +12,7 @@ const Review = () => {
     console.log(review);
     const submit =(e)=>{
         e.preventDefault();
-        fetch('http://localhost:5000/reviews',{
+        fetch('https://mighty-savannah-46549.herokuapp.com/reviews',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body:JSON.stringify(review)

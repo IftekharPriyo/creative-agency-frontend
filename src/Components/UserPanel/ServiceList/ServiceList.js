@@ -6,7 +6,7 @@ const ServiceList = () => {
     const user = jwt_decode(token);
     const[services,setServices] = useState([])
     useEffect(()=>{
-    fetch('http://localhost:5000/totalServices?email='+user.email)
+    fetch('https://mighty-savannah-46549.herokuapp.com/totalServices?email='+user.email)
     .then(res=>res.json())
     .then(data=>setServices(data))
 },[])

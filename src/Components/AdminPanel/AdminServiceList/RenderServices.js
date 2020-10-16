@@ -10,7 +10,7 @@ const RenderServices = (props) => {
         const status = e
         const updatedService = {name,email,title,description,status,image}
         console.log(updatedService);
-        fetch(`http://localhost:5000/update/${_id}`,{
+        fetch(`https://mighty-savannah-46549.herokuapp.com/update/${_id}`,{
             method: 'PATCH',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(updatedService)

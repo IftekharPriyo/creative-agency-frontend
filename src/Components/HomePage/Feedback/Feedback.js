@@ -8,7 +8,7 @@ import './Feedback.css'
 const Feedback = () => {
     const [totalReviews,setReviews] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/allReviews')
+        fetch('https://mighty-savannah-46549.herokuapp.com/allReviews')
         .then(res=>res.json())
         .then(data=>{
             setReviews(data)

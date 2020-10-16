@@ -35,7 +35,7 @@ const Order = () => {
    
     const submit =(e)=>{
         e.preventDefault()
-        fetch('http://localhost:5000/addServices',{
+        fetch('https://mighty-savannah-46549.herokuapp.com/addServices',{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body:JSON.stringify(serviceSummary)
